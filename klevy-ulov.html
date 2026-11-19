@@ -1,0 +1,2506 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Клёвый улов — Снасти, которым можно доверять</title>
+  <meta name="description" content="Одностраничный интернет-магазин рыболовных снастей «Клёвый улов». Ручная проверка каждой снасти перед отправкой." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --color-green: #1B3A2F;
+      --color-green-dark: #122820;
+      --color-green-light: #264F40;
+      --color-sand: #E8DCC4;
+      --color-sand-dark: #D5C5A6;
+      --color-orange: #E8763A;
+      --color-orange-hover: #D46328;
+      --color-graphite: #252927;
+      --color-graphite-muted: #525855;
+      --color-bg: #F5F2EA;
+      --color-surface: #FFFFFF;
+      --color-border: rgba(27, 58, 47, 0.14);
+
+      --font-heading: 'Oswald', sans-serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+      --container-max: 1360px;
+      --container-pad: clamp(16px, 4vw, 48px);
+      --header-height: 76px;
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --shadow-card: 0 8px 24px rgba(27, 58, 47, 0.06);
+      --shadow-hover: 0 14px 32px rgba(27, 58, 47, 0.12);
+      --transition: 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--color-bg);
+      color: var(--color-graphite);
+      line-height: 1.6;
+      overflow-x: hidden;
+      width: 100%;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    ul, ol {
+      list-style: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding-left: var(--container-pad);
+      padding-right: var(--container-pad);
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* Typography */
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-body);
+      font-size: clamp(0.75rem, 1.2vw, 0.85rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--color-orange);
+      margin-bottom: 12px;
+    }
+
+    .eyebrow::before {
+      content: '';
+      width: 24px;
+      height: 2px;
+      background-color: var(--color-orange);
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4.5vw, 3.25rem);
+      font-weight: 700;
+      line-height: 1.12;
+      text-transform: uppercase;
+      color: var(--color-green);
+      letter-spacing: 0.01em;
+      overflow-wrap: break-word;
+    }
+
+    .section-lead {
+      font-size: clamp(1rem, 1.5vw, 1.125rem);
+      color: var(--color-graphite-muted);
+      max-width: 62ch;
+      margin-top: 14px;
+      line-height: 1.65;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 13px 26px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      transition: transform var(--transition), background-color var(--transition), box-shadow var(--transition), border-color var(--transition);
+      text-align: center;
+      white-space: normal;
+      line-height: 1.3;
+    }
+
+    .btn:active {
+      transform: translateY(1px);
+    }
+
+    .btn-primary {
+      background-color: var(--color-orange);
+      color: #FFFFFF;
+      box-shadow: 0 6px 18px rgba(232, 118, 58, 0.28);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--color-orange-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(232, 118, 58, 0.36);
+    }
+
+    .btn-outline-light {
+      background-color: rgba(232, 220, 196, 0.1);
+      color: var(--color-sand);
+      border: 1.5px solid var(--color-sand);
+      backdrop-filter: blur(4px);
+    }
+
+    .btn-outline-light:hover {
+      background-color: var(--color-sand);
+      color: var(--color-green);
+      transform: translateY(-2px);
+    }
+
+    .btn-dark {
+      background-color: var(--color-green);
+      color: var(--color-sand);
+    }
+
+    .btn-dark:hover {
+      background-color: var(--color-green-light);
+      transform: translateY(-2px);
+    }
+
+    /* Sticky Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 900;
+      width: 100%;
+      background-color: rgba(27, 58, 47, 0.97);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(232, 220, 196, 0.14);
+      color: var(--color-sand);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: var(--header-height);
+      gap: 12px;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-heading);
+      font-size: clamp(1.25rem, 2.5vw, 1.65rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #FFFFFF;
+      flex-shrink: 0;
+      min-height: 44px;
+    }
+
+    .logo-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background-color: var(--color-orange);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .logo span.accent {
+      color: var(--color-orange);
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: clamp(16px, 2.4vw, 32px);
+    }
+
+    .main-nav a {
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--color-sand);
+      padding: 8px 2px;
+      position: relative;
+      transition: color var(--transition);
+      white-space: nowrap;
+    }
+
+    .main-nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 2px;
+      width: 0;
+      height: 2px;
+      background-color: var(--color-orange);
+      transition: width var(--transition);
+    }
+
+    .main-nav a:hover {
+      color: #FFFFFF;
+    }
+
+    .main-nav a:hover::after {
+      width: 100%;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .cart-trigger {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 44px;
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      background-color: rgba(232, 220, 196, 0.12);
+      color: #FFFFFF;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: 1px solid rgba(232, 220, 196, 0.22);
+      transition: background-color var(--transition), border-color var(--transition);
+    }
+
+    .cart-trigger:hover {
+      background-color: rgba(232, 220, 196, 0.2);
+      border-color: var(--color-orange);
+    }
+
+    .cart-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 24px;
+      height: 24px;
+      padding: 0 6px;
+      border-radius: 999px;
+      background-color: var(--color-orange);
+      color: #FFFFFF;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .burger-btn {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      color: var(--color-sand);
+      border: 1px solid rgba(232, 220, 196, 0.22);
+      flex-shrink: 0;
+    }
+
+    .burger-btn:hover {
+      background-color: rgba(232, 220, 196, 0.12);
+    }
+
+    /* Mobile Drawer Menu */
+    .mobile-menu {
+      display: none;
+      background-color: var(--color-green-dark);
+      border-top: 1px solid rgba(232, 220, 196, 0.14);
+      padding: 16px var(--container-pad) 24px;
+    }
+
+    .mobile-menu.is-open {
+      display: block;
+    }
+
+    .mobile-menu ul {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .mobile-menu a {
+      display: flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 10px 12px;
+      border-radius: var(--radius-sm);
+      color: var(--color-sand);
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .mobile-menu a:hover {
+      background-color: rgba(232, 220, 196, 0.1);
+      color: #FFFFFF;
+    }
+
+    @media (max-width: 920px) {
+      .main-nav {
+        display: none;
+      }
+      .burger-btn {
+        display: inline-flex;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .cart-label-text {
+        display: none;
+      }
+      .cart-trigger {
+        padding: 8px 10px;
+      }
+    }
+
+    /* HERO SECTION */
+    .hero {
+      position: relative;
+      background-color: #162925;
+      color: #FFFFFF;
+      overflow: hidden;
+      min-height: clamp(580px, 84vh, 860px);
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-bg-layer {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background-color: #162925;
+    }
+
+    .hero-bg-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 55%;
+      opacity: 0.85;
+      filter: contrast(1.06) saturate(0.95);
+    }
+
+    .hero-bg-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(22, 41, 37, 0.84) 0%, rgba(22, 41, 37, 0.56) 46%, rgba(16, 30, 27, 0.78) 100%),
+        radial-gradient(circle at 25% 35%, rgba(27, 58, 47, 0.45) 0%, rgba(14, 26, 23, 0.55) 100%);
+    }
+
+    @media (min-width: 960px) {
+      .hero-bg-overlay {
+        background:
+          linear-gradient(90deg, rgba(18, 34, 30, 0.86) 0%, rgba(20, 38, 34, 0.62) 55%, rgba(20, 38, 34, 0.35) 100%),
+          linear-gradient(180deg, rgba(18, 34, 30, 0.52) 0%, rgba(18, 34, 30, 0.25) 55%, rgba(14, 26, 23, 0.72) 100%);
+      }
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding-top: clamp(44px, 7vh, 84px);
+      padding-bottom: clamp(48px, 8vh, 88px);
+    }
+
+    .hero-content {
+      max-width: 780px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: clamp(0.75rem, 1.1vw, 0.85rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--color-sand);
+      margin-bottom: 20px;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+    }
+
+    .hero-tag::before {
+      content: '';
+      width: 24px;
+      height: 2px;
+      background-color: var(--color-orange);
+      flex-shrink: 0;
+    }
+
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.65rem, 6.2vw, 4.9rem);
+      font-weight: 700;
+      line-height: 0.98;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      letter-spacing: 0.005em;
+      margin-bottom: 24px;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      hyphens: none;
+      text-shadow: 0 4px 22px rgba(0, 0, 0, 0.38);
+    }
+
+    .hero-title span {
+      color: var(--color-orange);
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1rem, 1.5vw, 1.2rem);
+      line-height: 1.62;
+      color: #F3EDE2;
+      max-width: 56ch;
+      margin-bottom: 34px;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      width: 100%;
+    }
+
+    .hero-actions .btn {
+      border-radius: 999px;
+      padding: 15px 32px;
+    }
+
+    @media (max-width: 520px) {
+      .hero-actions {
+        flex-direction: column;
+      }
+      .hero-actions .btn {
+        width: 100%;
+      }
+    }
+
+    .hero-trust-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px 28px;
+      margin-top: 36px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(232, 220, 196, 0.22);
+      font-size: 0.84rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--color-sand);
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+    }
+
+    .hero-trust-strip span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Section Spacing */
+    .section {
+      padding-top: clamp(56px, 8vw, 104px);
+      padding-bottom: clamp(56px, 8vw, 104px);
+    }
+
+    /* Advantages Section */
+    .advantages {
+      background-color: var(--color-bg);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .advantages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+      gap: clamp(18px, 2.5vw, 28px);
+      margin-top: clamp(32px, 4vw, 48px);
+    }
+
+    .adv-card {
+      background-color: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: clamp(22px, 3vw, 32px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow-card);
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    }
+
+    .adv-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--color-orange);
+    }
+
+    .adv-num {
+      font-family: var(--font-heading);
+      font-size: clamp(2.2rem, 3.5vw, 3rem);
+      font-weight: 700;
+      line-height: 1;
+      color: var(--color-orange);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .adv-num::after {
+      content: '';
+      width: 36px;
+      height: 1px;
+      background-color: var(--color-border);
+    }
+
+    .adv-title {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--color-green);
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+
+    .adv-desc {
+      font-size: 0.94rem;
+      color: var(--color-graphite-muted);
+      line-height: 1.6;
+    }
+
+    /* Catalog Section */
+    .catalog-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: clamp(28px, 4vw, 42px);
+    }
+
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .filter-btn {
+      min-height: 44px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      background-color: var(--color-surface);
+      color: var(--color-graphite);
+      border: 1px solid var(--color-border);
+      transition: background-color var(--transition), color var(--transition), border-color var(--transition);
+    }
+
+    .filter-btn:hover {
+      border-color: var(--color-green);
+      color: var(--color-green);
+    }
+
+    .filter-btn.is-active {
+      background-color: var(--color-green);
+      color: var(--color-sand);
+      border-color: var(--color-green);
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 275px), 1fr));
+      gap: clamp(18px, 2.5vw, 28px);
+    }
+
+    .product-card {
+      background-color: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-card);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .product-media {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background-color: #EFECE4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 14px;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .product-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 6px;
+      transition: transform 0.35s ease;
+    }
+
+    .product-card:hover .product-media img {
+      transform: scale(1.04);
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background-color: var(--color-green);
+      color: var(--color-sand);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 5px 10px;
+      border-radius: 4px;
+      z-index: 2;
+    }
+
+    .product-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .product-title {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--color-green);
+      line-height: 1.25;
+      margin-bottom: 8px;
+      overflow-wrap: break-word;
+    }
+
+    .product-desc {
+      font-size: 0.9rem;
+      color: var(--color-graphite-muted);
+      line-height: 1.55;
+    }
+
+    .product-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding-top: 14px;
+      border-top: 1px solid var(--color-border);
+      flex-wrap: wrap;
+    }
+
+    .product-price {
+      font-family: var(--font-heading);
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--color-graphite);
+      white-space: nowrap;
+    }
+
+    .product-add-btn {
+      min-height: 44px;
+      padding: 10px 18px;
+      background-color: var(--color-orange);
+      color: #FFFFFF;
+      font-size: 0.88rem;
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background-color var(--transition), transform var(--transition);
+    }
+
+    .product-add-btn:hover {
+      background-color: var(--color-orange-hover);
+    }
+
+    /* Interactive Picker Section */
+    .picker-section {
+      background-color: var(--color-green);
+      color: #FFFFFF;
+      position: relative;
+    }
+
+    .picker-section .section-title {
+      color: var(--color-sand);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .picker-section .section-lead {
+      color: rgba(232, 220, 196, 0.85);
+    }
+
+    .picker-box {
+      margin-top: clamp(28px, 4vw, 44px);
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(232, 220, 196, 0.18);
+      border-radius: var(--radius-lg);
+      padding: clamp(20px, 3.5vw, 38px);
+    }
+
+    .picker-controls {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+
+    .picker-group-label {
+      display: block;
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--color-sand);
+      margin-bottom: 12px;
+    }
+
+    .picker-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .picker-chip {
+      min-height: 44px;
+      padding: 10px 16px;
+      border-radius: var(--radius-sm);
+      background-color: rgba(232, 220, 196, 0.1);
+      color: var(--color-sand);
+      border: 1px solid rgba(232, 220, 196, 0.25);
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: all var(--transition);
+    }
+
+    .picker-chip:hover {
+      background-color: rgba(232, 220, 196, 0.2);
+    }
+
+    .picker-chip.is-selected {
+      background-color: var(--color-orange);
+      color: #FFFFFF;
+      border-color: var(--color-orange);
+      font-weight: 600;
+    }
+
+    .picker-results-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(232, 220, 196, 0.16);
+      margin-bottom: 20px;
+    }
+
+    .picker-results-title {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      text-transform: uppercase;
+      color: #FFFFFF;
+    }
+
+    .picker-advice {
+      font-size: 0.92rem;
+      color: var(--color-sand);
+      background-color: rgba(232, 118, 58, 0.18);
+      border: 1px solid rgba(232, 118, 58, 0.4);
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+    }
+
+    .picker-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+      gap: 20px;
+    }
+
+    .picker-card {
+      background-color: var(--color-surface);
+      color: var(--color-graphite);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .picker-card-top {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .picker-card-thumb {
+      width: 72px;
+      height: 72px;
+      border-radius: 8px;
+      background-color: #EFECE4;
+      padding: 6px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .picker-card-name {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--color-green);
+      line-height: 1.25;
+      margin-bottom: 4px;
+    }
+
+    .picker-card-cat {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--color-orange);
+      text-transform: uppercase;
+    }
+
+    .picker-card-reason {
+      font-size: 0.88rem;
+      color: var(--color-graphite-muted);
+      line-height: 1.5;
+    }
+
+    .picker-card-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding-top: 12px;
+      border-top: 1px solid var(--color-border);
+    }
+
+    /* "Наше слово" Orange Section */
+    .our-word-section {
+      background-color: var(--color-orange);
+      color: #141716;
+      padding-top: clamp(56px, 8vw, 96px);
+      padding-bottom: clamp(56px, 8vw, 96px);
+    }
+
+    .our-word-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-body);
+      font-size: clamp(0.78rem, 1.2vw, 0.88rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #141716;
+      margin-bottom: 18px;
+    }
+
+    .our-word-eyebrow::before {
+      content: '';
+      width: 24px;
+      height: 2px;
+      background-color: #141716;
+      flex-shrink: 0;
+    }
+
+    .our-word-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.2rem, 5.2vw, 4rem);
+      font-weight: 700;
+      line-height: 1.14;
+      text-transform: uppercase;
+      color: #141716;
+      max-width: 920px;
+      margin-bottom: 28px;
+    }
+
+    .black-pill-highlight {
+      display: inline-block;
+      background-color: #141716;
+      color: var(--color-orange);
+      padding: 4px 16px 6px;
+      border-radius: 6px;
+      line-height: 1.05;
+      vertical-align: baseline;
+    }
+
+    .our-word-actions {
+      margin-bottom: clamp(32px, 5vw, 48px);
+    }
+
+    .btn-our-word {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 14px 30px;
+      border-radius: var(--radius-sm);
+      background-color: #141716;
+      color: var(--color-orange);
+      font-family: var(--font-body);
+      font-size: 0.98rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      transition: transform var(--transition), background-color var(--transition), box-shadow var(--transition);
+    }
+
+    .btn-our-word:hover {
+      background-color: #252927;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(20, 23, 22, 0.25);
+    }
+
+    .our-word-criteria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+      gap: 24px;
+      padding-top: 30px;
+      border-top: 2px solid rgba(20, 23, 22, 0.2);
+    }
+
+    .our-word-stat {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
+    }
+
+    .our-word-stat-num {
+      font-family: var(--font-heading);
+      font-size: clamp(2.75rem, 5vw, 4.2rem);
+      font-weight: 700;
+      line-height: 0.95;
+      color: #141716;
+      letter-spacing: -0.01em;
+    }
+
+    .our-word-stat-label {
+      font-size: clamp(0.95rem, 1.3vw, 1.08rem);
+      font-weight: 700;
+      color: #141716;
+      line-height: 1.35;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    /* Reviews Section */
+    .reviews-section {
+      background-color: var(--color-bg);
+    }
+
+    .reviews-note {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 0.85rem;
+      color: var(--color-graphite-muted);
+      background-color: var(--color-sand);
+      padding: 6px 12px;
+      border-radius: 4px;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+      gap: clamp(20px, 3vw, 32px);
+      margin-top: clamp(32px, 4vw, 48px);
+    }
+
+    .review-card {
+      background-color: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: clamp(24px, 3.5vw, 36px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .review-stars {
+      color: var(--color-orange);
+      font-size: 1.1rem;
+      letter-spacing: 3px;
+      margin-bottom: 12px;
+    }
+
+    .review-text {
+      font-size: 1rem;
+      color: var(--color-graphite);
+      line-height: 1.7;
+    }
+
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding-top: 18px;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .review-avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background-color: var(--color-green);
+      color: var(--color-sand);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .review-author-info strong {
+      display: block;
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      color: var(--color-green);
+      letter-spacing: 0.02em;
+    }
+
+    .review-author-info span {
+      font-size: 0.85rem;
+      color: var(--color-graphite-muted);
+    }
+
+    /* Guarantees & Delivery */
+    .guarantees-section {
+      background-color: var(--color-sand);
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .guarantees-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr));
+      gap: clamp(18px, 2.5vw, 28px);
+      margin-top: clamp(28px, 4vw, 44px);
+    }
+
+    .info-block {
+      background-color: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: clamp(22px, 3vw, 30px);
+    }
+
+    .info-block-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background-color: var(--color-green);
+      color: var(--color-sand);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .info-block h3 {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      text-transform: uppercase;
+      color: var(--color-green);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+
+    .info-block p {
+      font-size: 0.94rem;
+      color: var(--color-graphite-muted);
+      line-height: 1.62;
+    }
+
+    .guarantee-disclaimer {
+      margin-top: 28px;
+      padding: 18px 22px;
+      border-left: 4px solid var(--color-orange);
+      background-color: rgba(255, 255, 255, 0.72);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.92rem;
+      color: var(--color-graphite);
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    .site-footer {
+      background-color: var(--color-green-dark);
+      color: var(--color-sand);
+      padding-top: clamp(48px, 7vw, 80px);
+      padding-bottom: 32px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+      gap: clamp(28px, 4vw, 44px);
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(232, 220, 196, 0.14);
+    }
+
+    .footer-col h4 {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #FFFFFF;
+      margin-bottom: 16px;
+    }
+
+    .footer-col p, .footer-col li {
+      font-size: 0.92rem;
+      color: rgba(232, 220, 196, 0.8);
+      line-height: 1.65;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footer-links a {
+      display: inline-block;
+      padding: 4px 0;
+      transition: color var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--color-orange);
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .social-link {
+      min-height: 44px;
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      background-color: rgba(232, 220, 196, 0.1);
+      color: var(--color-sand);
+      font-size: 0.86rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      transition: background-color var(--transition);
+    }
+
+    .social-link:hover {
+      background-color: var(--color-orange);
+      color: #FFFFFF;
+    }
+
+    .footer-bottom {
+      padding-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 0.84rem;
+      color: rgba(232, 220, 196, 0.65);
+    }
+
+    /* Modals & Toast */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background-color: rgba(18, 40, 32, 0.72);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .modal-backdrop.is-open {
+      display: flex;
+    }
+
+    .modal-backdrop.modal-centered {
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .cart-drawer {
+      width: 100%;
+      max-width: 460px;
+      height: 100%;
+      max-height: 100dvh;
+      background-color: var(--color-bg);
+      color: var(--color-graphite);
+      display: flex;
+      flex-direction: column;
+      box-shadow: -12px 0 36px rgba(0, 0, 0, 0.28);
+      overflow: hidden;
+    }
+
+    .dialog-card {
+      width: 100%;
+      max-width: 480px;
+      max-height: 90dvh;
+      background-color: var(--color-bg);
+      color: var(--color-graphite);
+      border-radius: var(--radius-md);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.35);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .cart-header {
+      padding: 20px 24px;
+      background-color: var(--color-green);
+      color: var(--color-sand);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .cart-header h2 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      color: #FFFFFF;
+    }
+
+    .cart-close {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      color: var(--color-sand);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      background-color: rgba(232, 220, 196, 0.12);
+    }
+
+    .cart-close:hover {
+      background-color: var(--color-orange);
+      color: #FFFFFF;
+    }
+
+    .cart-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .cart-empty {
+      text-align: center;
+      padding: 48px 16px;
+      color: var(--color-graphite-muted);
+    }
+
+    .cart-empty strong {
+      display: block;
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      text-transform: uppercase;
+      color: var(--color-green);
+      margin-bottom: 8px;
+    }
+
+    .cart-item {
+      background-color: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .cart-item-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 6px;
+      background-color: #EFECE4;
+      padding: 4px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .cart-item-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .cart-item-title {
+      font-weight: 600;
+      font-size: 0.94rem;
+      color: var(--color-green);
+      margin-bottom: 4px;
+      overflow-wrap: break-word;
+    }
+
+    .cart-item-price {
+      font-size: 0.88rem;
+      color: var(--color-graphite-muted);
+      font-weight: 600;
+    }
+
+    .cart-item-controls {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 8px;
+      flex-wrap: wrap;
+    }
+
+    .qty-btn {
+      width: 34px;
+      height: 34px;
+      border-radius: 4px;
+      background-color: var(--color-bg);
+      border: 1px solid var(--color-border);
+      font-weight: 700;
+      color: var(--color-green);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .qty-btn:hover {
+      background-color: var(--color-sand);
+    }
+
+    .qty-val {
+      min-width: 26px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+
+    .remove-item-btn {
+      margin-left: auto;
+      min-height: 34px;
+      padding: 4px 8px;
+      font-size: 0.8rem;
+      color: #B63E26;
+      font-weight: 600;
+    }
+
+    .remove-item-btn:hover {
+      text-decoration: underline;
+    }
+
+    .cart-footer {
+      padding: 20px 24px;
+      background-color: var(--color-surface);
+      border-top: 1px solid var(--color-border);
+      flex-shrink: 0;
+    }
+
+    .cart-total-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    .cart-total-sum {
+      font-family: var(--font-heading);
+      font-size: 1.65rem;
+      color: var(--color-green);
+    }
+
+    .checkout-note {
+      margin-top: 10px;
+      font-size: 0.8rem;
+      color: var(--color-graphite-muted);
+      text-align: center;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+
+    .form-field label {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--color-green);
+    }
+
+    .form-field input,
+    .form-field textarea {
+      width: 100%;
+      padding: 11px 14px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--color-border);
+      background-color: var(--color-surface);
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: var(--color-graphite);
+    }
+
+    .form-field input:focus,
+    .form-field textarea:focus {
+      outline: 2px solid var(--color-orange);
+      border-color: transparent;
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      left: auto;
+      max-width: calc(100vw - 40px);
+      z-index: 1100;
+      background-color: var(--color-green);
+      color: #FFFFFF;
+      border-left: 4px solid var(--color-orange);
+      padding: 14px 18px;
+      border-radius: var(--radius-sm);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.24);
+      font-size: 0.92rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transform: translateY(130%);
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    .toast.is-visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Scroll Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="logo" aria-label="Клёвый улов — на главную">
+        <span class="logo-mark" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 4a3 3 0 0 0-3 3v10a5 5 0 0 1-10 0v-2l3 2" />
+            <circle cx="15" cy="7" r="1" />
+          </svg>
+        </span>
+        <span>Клёвый <span class="accent">улов</span></span>
+      </a>
+
+      <nav class="main-nav" aria-label="Основная навигация">
+        <a href="#catalog">Каталог</a>
+        <a href="#picker">Подбор снасти</a>
+        <a href="#guarantees">Гарантии</a>
+        <a href="#delivery">Доставка</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="cart-trigger" id="openCartBtn" aria-label="Открыть корзину">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="cart-label-text">Корзина</span>
+          <span class="cart-badge" id="headerCartCount">0</span>
+        </button>
+
+        <button type="button" class="burger-btn" id="burgerBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Открыть меню">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Мобильная навигация">
+      <ul>
+        <li><a href="#catalog">Каталог</a></li>
+        <li><a href="#picker">Подбор снасти</a></li>
+        <li><a href="#guarantees">Гарантии</a></li>
+        <li><a href="#delivery">Доставка</a></li>
+        <li><a href="#reviews">Отзывы</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- Hero Section -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-bg-layer" aria-hidden="true">
+        <img
+          src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?auto=format&fit=crop&w=1800&q=85"
+          alt=""
+          class="hero-bg-photo"
+          loading="eager"
+          onerror="this.style.display='none'"
+        />
+        <div class="hero-bg-overlay"></div>
+      </div>
+
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <span class="hero-tag">Магазин для тех, кто ловит всерьёз</span>
+          <h1 class="hero-title" id="hero-heading">
+            Снасть, которая не подведёт <span>на первом забросе</span>
+          </h1>
+          <p class="hero-subtitle">
+            Подбираем и вручную проверяем удилища, катушки и приманки, чтобы вы были уверены в своей снасти ещё до выхода на воду.
+          </p>
+          <div class="hero-actions">
+            <a href="#catalog" class="btn btn-primary">Выбрать снасти →</a>
+            <a href="#picker" class="btn btn-outline-light">Подобрать комплект</a>
+          </div>
+          <div class="hero-trust-strip">
+            <span>✓ Проверка перед отправкой</span>
+            <span>✓ 30 дней на возврат</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section class="section advantages" aria-labelledby="advantages-heading">
+      <div class="container">
+        <span class="eyebrow">Стандарты магазина</span>
+        <h2 class="section-title" id="advantages-heading">Почему рыболовы выбирают нас</h2>
+
+        <div class="advantages-grid">
+          <article class="adv-card reveal">
+            <div>
+              <div class="adv-num">01</div>
+              <h3 class="adv-title">Ручная проверка каждой снасти</h3>
+              <p class="adv-desc">Перед упаковкой осматриваем бланк, соосность пропускных колец, работу фрикциона и плавность хода каждой катушки.</p>
+            </div>
+          </article>
+
+          <article class="adv-card reveal">
+            <div>
+              <div class="adv-num">02</div>
+              <h3 class="adv-title">Возврат в течение 30 дней</h3>
+              <p class="adv-desc">Если снасть не подошла по строю или балансу, вы можете вернуть её в течение 30 дней согласно условиям магазина и законодательству.</p>
+            </div>
+          </article>
+
+          <article class="adv-card reveal">
+            <div>
+              <div class="adv-num">03</div>
+              <h3 class="adv-title">Проверенные производители</h3>
+              <p class="adv-desc">Работаем только с официальными поставщиками Shimano, Daiwa, Zetrix, Narval и проверенных мастерских приманок.</p>
+            </div>
+          </article>
+
+          <article class="adv-card reveal">
+            <div>
+              <div class="adv-num">04</div>
+              <h3 class="adv-title">Помощь с подбором снастей</h3>
+              <p class="adv-desc">Подскажем оптимальный тест удилища, размер шпули и диаметр шнура под конкретный водоём и способ ловли.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Catalog Section -->
+    <section class="section" id="catalog" aria-labelledby="catalog-heading">
+      <div class="container">
+        <div class="catalog-header">
+          <div>
+            <span class="eyebrow">Ассортимент в наличии</span>
+            <h2 class="section-title" id="catalog-heading">Каталог проверенных снастей</h2>
+          </div>
+
+          <div class="filter-bar" role="tablist" aria-label="Фильтр товаров по категориям">
+            <button type="button" class="filter-btn is-active" data-category="all">Все товары</button>
+            <button type="button" class="filter-btn" data-category="spinning">Спиннинги</button>
+            <button type="button" class="filter-btn" data-category="feeder">Фидерные удилища</button>
+            <button type="button" class="filter-btn" data-category="reels">Катушки</button>
+            <button type="button" class="filter-btn" data-category="lures">Приманки</button>
+            <button type="button" class="filter-btn" data-category="sets">Рыболовные комплекты</button>
+          </div>
+        </div>
+
+        <div class="products-grid" id="productsGrid"></div>
+      </div>
+    </section>
+
+    <!-- Interactive Gear Picker -->
+    <section class="section picker-section" id="picker" aria-labelledby="picker-heading">
+      <div class="container">
+        <span class="eyebrow">Экспертный конфигуратор</span>
+        <h2 class="section-title" id="picker-heading">
+          <span>Кого ловим?</span>
+          <span>Где ловим?</span>
+        </h2>
+        <p class="section-lead">Укажите целевую рыбу и условия водоёма — мы сразу покажем 2–3 подходящие позиции из каталога с объяснением выбора.</p>
+
+        <div class="picker-box reveal">
+          <div class="picker-controls">
+            <div>
+              <span class="picker-group-label">1. Какая рыба интересует?</span>
+              <div class="picker-options" id="fishOptions">
+                <button type="button" class="picker-chip is-selected" data-fish="pike">Щука</button>
+                <button type="button" class="picker-chip" data-fish="perch">Окунь</button>
+                <button type="button" class="picker-chip" data-fish="zander">Судак</button>
+                <button type="button" class="picker-chip" data-fish="carp">Карп</button>
+              </div>
+            </div>
+
+            <div>
+              <span class="picker-group-label">2. Где планируется рыбалка?</span>
+              <div class="picker-options" id="placeOptions">
+                <button type="button" class="picker-chip is-selected" data-place="river">Река</button>
+                <button type="button" class="picker-chip" data-place="lake">Озеро</button>
+                <button type="button" class="picker-chip" data-place="winter">Зимняя рыбалка</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="picker-results-header">
+            <h3 class="picker-results-title">Рекомендуемые снасти под ваши условия</h3>
+            <span class="picker-advice" id="pickerAdviceText">Акцент на запас мощности на течении и контроль проводки</span>
+          </div>
+
+          <div class="picker-grid" id="pickerResultsGrid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- "Наше слово" Orange Section -->
+    <section class="our-word-section" id="our-word" aria-labelledby="our-word-heading">
+      <div class="container reveal">
+        <span class="our-word-eyebrow">Наше слово</span>
+        <h2 class="our-word-title" id="our-word-heading">
+          Не клюнуло — <span class="black-pill-highlight">вернём деньги</span> без объяснений
+        </h2>
+
+        <div class="our-word-actions">
+          <button type="button" class="btn-our-word" id="openReturnModalBtn">Оформить возврат →</button>
+        </div>
+
+        <div class="our-word-criteria">
+          <div class="our-word-stat">
+            <span class="our-word-stat-num">30</span>
+            <span class="our-word-stat-label">дней на проверку</span>
+          </div>
+          <div class="our-word-stat">
+            <span class="our-word-stat-num">0</span>
+            <span class="our-word-stat-label">вопросов при возврате</span>
+          </div>
+          <div class="our-word-stat">
+            <span class="our-word-stat-num">100%</span>
+            <span class="our-word-stat-label">суммы возвращаем</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="section reviews-section" id="reviews" aria-labelledby="reviews-heading">
+      <div class="container">
+        <span class="eyebrow">Опыт рыболовов</span>
+        <h2 class="section-title" id="reviews-heading">Слово рыбакам</h2>
+        <span class="reviews-note">Демонстрационный блок: приведены примеры отзывов покупателей</span>
+
+        <div class="reviews-grid">
+          <article class="review-card reveal">
+            <div>
+              <div class="review-stars" aria-label="Оценка 5 из 5">★★★★★</div>
+              <p class="review-text">«Заказывал комплект для джига на Оке. Менеджер перед отправкой прислал фото проверки стыка колен и намотки шнура. Упаковали в жёсткий тубус — доехало без единой царапины.»</p>
+            </div>
+            <div class="review-author">
+              <div class="review-avatar" aria-hidden="true">АМ</div>
+              <div class="review-author-info">
+                <strong>Алексей М.</strong>
+                <span>г. Нижний Новгород • Спиннинг Zetrix</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card reveal">
+            <div>
+              <div class="review-stars" aria-label="Оценка 5 из 5">★★★★★</div>
+              <p class="review-text">«Помогли подобрать фидер под среднее течение и кормушки 80 г. Понравилось, что не навязывали самую дорогую модель, а посоветовали бланк с нужным запасом по квивертипам.»</p>
+            </div>
+            <div class="review-author">
+              <div class="review-avatar" aria-hidden="true">ДК</div>
+              <div class="review-author-info">
+                <strong>Дмитрий К.</strong>
+                <span>г. Самара • Фидер River Master</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card reveal">
+            <div>
+              <div class="review-stars" aria-label="Оценка 5 из 5">★★★★★</div>
+              <p class="review-text">«Брал набор воблеров и силикона на осеннюю щуку. Все крючки острые, фурнитура без люфтов, цвета ровно те, что указаны в карточке. Удобно, что всё собрано в одной коробке.»</p>
+            </div>
+            <div class="review-author">
+              <div class="review-avatar" aria-hidden="true">СВ</div>
+              <div class="review-author-info">
+                <strong>Сергей В.</strong>
+                <span>г. Тверь • Набор приманок</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guarantees & Delivery -->
+    <section class="section guarantees-section" id="guarantees" aria-labelledby="guarantees-heading">
+      <div class="container">
+        <span class="eyebrow">Надёжность и сервис</span>
+        <h2 class="section-title" id="guarantees-heading">Гарантии качества и доставка</h2>
+
+        <div class="guarantees-grid" id="delivery">
+          <article class="info-block reveal">
+            <div class="info-block-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 11l3 3L22 4"></path>
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+              </svg>
+            </div>
+            <h3>Проверка перед отправкой</h3>
+            <p>Каждое удилище проходит осмотр на отсутствие микротрещин бланка, сколов вставок колец и перекосов катушкодержателя. Катушки проверяются на плавность хода и работу дужки лесоукладывателя.</p>
+          </article>
+
+          <article class="info-block reveal">
+            <div class="info-block-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="1 4 1 10 7 10"></polyline>
+                <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+              </svg>
+            </div>
+            <h3>Условия возврата 30 дней</h3>
+            <p>Вы можете обменять или вернуть товар надлежащего качества в течение 30 дней при сохранении товарного вида, ярлыков и заводской упаковки, а также при выявлении производственного брака.</p>
+          </article>
+
+          <article class="info-block reveal">
+            <div class="info-block-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="1" y="3" width="15" height="13"></rect>
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+              </svg>
+            </div>
+            <h3>Бережная доставка</h3>
+            <p>Отправляем заказы СДЭК, Почтой России и курьерскими службами. Все удилища упаковываем в жёсткие картонные или пластиковые тубусы за счёт магазина.</p>
+          </article>
+
+          <article class="info-block reveal">
+            <div class="info-block-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+            </div>
+            <h3>Помощь в выборе снасти</h3>
+            <p>Если сомневаетесь в тесте спиннинга, передаточном числе катушки или подборе приманок под глубину водоёма — напишите нам, и практикующий рыболов соберёт сбалансированный вариант.</p>
+          </article>
+        </div>
+
+        <div class="guarantee-disclaimer">
+          <strong>Важное уточнение:</strong> Гарантия магазина распространяется на заводское качество, целостность и исправность рыболовных снастей. Результат рыбалки зависит от погодных условий, тактики ловли и активности рыбы на водоёме.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="contacts">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="#top" class="logo" style="margin-bottom: 14px;">
+            <span class="logo-mark" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 4a3 3 0 0 0-3 3v10a5 5 0 0 1-10 0v-2l3 2" />
+                <circle cx="15" cy="7" r="1" />
+              </svg>
+            </span>
+            <span>Клёвый <span class="accent">улов</span></span>
+          </a>
+          <p>Интернет-магазин проверенных рыболовных снастей. Отбираем только рабочие удилища, надёжные катушки и уловистые приманки.</p>
+          <div class="social-links" aria-label="Социальные сети">
+            <a href="#contacts" class="social-link">Telegram</a>
+            <a href="#contacts" class="social-link">ВКонтакте</a>
+            <a href="#contacts" class="social-link">YouTube</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Навигация</h4>
+          <ul class="footer-links">
+            <li><a href="#catalog">Каталог снастей</a></li>
+            <li><a href="#picker">Подбор комплекта</a></li>
+            <li><a href="#our-word">Наше слово</a></li>
+            <li><a href="#guarantees">Гарантии качества</a></li>
+            <li><a href="#reviews">Отзывы покупателей</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Доставка и возврат</h4>
+          <ul class="footer-links">
+            <li><a href="#delivery">Отправка в жёстких тубусах</a></li>
+            <li><a href="#delivery">СДЭК и Почта России по РФ</a></li>
+            <li><a href="#our-word">Возврат и обмен в течение 30 дней</a></li>
+            <li><a href="#guarantees">Ручная предпродажная проверка</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Контакты</h4>
+          <ul class="footer-links">
+            <li>Телефон: <a href="tel:+78005553489">8 (800) 555-34-89</a></li>
+            <li>Почта: <a href="mailto:info@klevy-ulov.ru">info@klevy-ulov.ru</a></li>
+            <li>Режим работы: Ежедневно с 09:00 до 21:00</li>
+            <li>Склад и пункт выдачи: г. Москва, ул. Речная, д. 14</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 «Клёвый улов». Все права защищены.</span>
+        <span>Снасти с предпродажной проверкой</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Modal & Return Modal -->
+  <div class="modal-backdrop" id="cartBackdrop" role="dialog" aria-modal="true" aria-labelledby="cartDialogTitle">
+    <div class="cart-drawer">
+      <div class="cart-header">
+        <h2 id="cartDialogTitle">Ваша корзина</h2>
+        <button type="button" class="cart-close" id="closeCartBtn" aria-label="Закрыть корзину">×</button>
+      </div>
+
+      <div class="cart-body" id="cartItemsContainer"></div>
+
+      <div class="cart-footer" id="cartFooter">
+        <div class="cart-total-row">
+          <span>Итого к оплате:</span>
+          <span class="cart-total-sum" id="cartTotalSum">0 ₽</span>
+        </div>
+        <button type="button" class="btn btn-primary" style="width: 100%;" id="checkoutBtn">Оформить заказ</button>
+        <p class="checkout-note">Перед отправкой каждая позиция проходит ручную проверку</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop modal-centered" id="returnBackdrop" role="dialog" aria-modal="true" aria-labelledby="returnDialogTitle">
+    <div class="dialog-card">
+      <div class="cart-header">
+        <h2 id="returnDialogTitle">Заявка на возврат</h2>
+        <button type="button" class="cart-close" id="closeReturnBtn" aria-label="Закрыть окно возврата">×</button>
+      </div>
+      <form class="cart-body" id="returnForm">
+        <p style="font-size: 0.92rem; color: var(--color-graphite-muted); line-height: 1.55;">
+          Укажите номер заказа и контактный телефон — мы оформим возврат в течение 30 дней с момента получения без лишних вопросов и вернём 100% стоимости.
+        </p>
+        <div class="form-field">
+          <label for="returnOrderNumber">Номер заказа</label>
+          <input type="text" id="returnOrderNumber" placeholder="Например, КУ-4821" required />
+        </div>
+        <div class="form-field">
+          <label for="returnPhone">Телефон или Telegram для связи</label>
+          <input type="text" id="returnPhone" placeholder="+7 (999) 000-00-00" required />
+        </div>
+        <div class="form-field">
+          <label for="returnComment">Комментарий (по желанию)</label>
+          <textarea id="returnComment" rows="3" placeholder="Укажите удобный способ возврата средств"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Отправить заявку на возврат</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    (function () {
+      const PRODUCTS = [
+        {
+          id: 'spin-avalanche',
+          name: 'Спиннинг Zetrix Avalanche 2.44 м (7–28 г)',
+          category: 'spinning',
+          categoryLabel: 'Спиннинги',
+          price: 11490,
+          desc: 'Быстрый джиговый бланк с высокой тактильной чувствительностью и противозахлёстными кольцами.',
+          image: 'https://images.unsplash.com/photo-1586919168345-5a246825573c?auto=format&fit=crop&w=800&q=80',
+          fish: ['pike', 'zander'],
+          place: ['river', 'lake'],
+          reason: 'Строй Fast и тест до 28 г позволяют уверенно просекать судака и щуку на глубине.'
+        },
+        {
+          id: 'spin-ultralight',
+          name: 'Спиннинг Trout & Perch Finesse 2.13 м (1–7 г)',
+          category: 'spinning',
+          categoryLabel: 'Спиннинги',
+          price: 8290,
+          desc: 'Лёгкое удилище с вклеенной вершинкой Solid Tip для микроджига и деликатной проводки.',
+          image: 'https://images.unsplash.com/photo-1516962215378-7fa2e137ae93?auto=format&fit=crop&w=800&q=80',
+          fish: ['perch'],
+          place: ['lake', 'river'],
+          reason: 'Информативная вершинка фиксирует самые осторожные поклёвки окуня на лёгких весах.'
+        },
+        {
+          id: 'feeder-river',
+          name: 'Фидерное удилище River Master 3.90 м (до 120 г)',
+          category: 'feeder',
+          categoryLabel: 'Фидерные удилища',
+          price: 9850,
+          desc: 'Мощный речной фидер с тремя сменными квивертипами (2, 3 и 4 oz) для работы на течении.',
+          image: 'https://images.unsplash.com/photo-1534043464124-3be32fe000c9?auto=format&fit=crop&w=800&q=80',
+          fish: ['carp'],
+          place: ['river', 'lake'],
+          reason: 'Вяжущий бланк гасит рывки крупного карпа и уверенно держит тяжёлую кормушку на струе.'
+        },
+        {
+          id: 'reel-fuego',
+          name: 'Катушка Daiwa Fuego LT 3000-C',
+          category: 'reels',
+          categoryLabel: 'Катушки',
+          price: 10900,
+          desc: 'Лёгкий корпус Zaion V, ферромагнитная защита MagSealed и плавный фрикцион ATD.',
+          image: 'https://images.unsplash.com/photo-1595079676339-1534801ad6cf?auto=format&fit=crop&w=800&q=80',
+          fish: ['pike', 'zander', 'perch'],
+          place: ['river', 'lake'],
+          reason: 'Надёжная главная пара и точный фрикцион подходят под интенсивную спиннинговую ловлю.'
+        },
+        {
+          id: 'reel-baitrunner',
+          name: 'Катушка Carp Runner 5000S с байтраннером',
+          category: 'reels',
+          categoryLabel: 'Катушки',
+          price: 7650,
+          desc: 'Силовая катушка с системой свободного сброса лески и металлической шпулей Long Cast.',
+          image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80',
+          fish: ['carp'],
+          place: ['lake', 'river'],
+          reason: 'Байтраннер страхует удилище при резкой поклёвке трофейного карпа на донную снасть.'
+        },
+        {
+          id: 'lures-predator',
+          name: 'Набор приманок «Глубинный хищник» (12 шт.)',
+          category: 'lures',
+          categoryLabel: 'Приманки',
+          price: 2890,
+          desc: 'Виброхвосты 3.5–4.5 дюйма, воблер-минноу 110 мм и разборные чебурашки в коробке.',
+          image: 'https://images.unsplash.com/photo-1583212292454-1fe6229603b7?auto=format&fit=crop&w=800&q=80',
+          fish: ['pike', 'zander', 'perch'],
+          place: ['river', 'lake'],
+          reason: 'Проверенные расцветки и размеры закрывают ловлю активного и пассивного хищника.'
+        },
+        {
+          id: 'set-universal',
+          name: 'Комплект «Универсальный спиннингист»',
+          category: 'sets',
+          categoryLabel: 'Рыболовные комплекты',
+          price: 16900,
+          desc: 'Сбалансированный спиннинг 2.40 м (5–25 г), катушка 2500, плетёный шнур #1.0 и набор поводков.',
+          image: 'https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?auto=format&fit=crop&w=800&q=80',
+          fish: ['pike', 'perch', 'zander'],
+          place: ['lake', 'river'],
+          reason: 'Полностью собранный и проверенный на баланс комплект — готов к рыбалке сразу из тубуса.'
+        },
+        {
+          id: 'set-winter',
+          name: 'Зимний комплект «Ледовый охотник»',
+          category: 'sets',
+          categoryLabel: 'Рыболовные комплекты',
+          price: 5490,
+          desc: 'Удильник с жёстким хлыстом под вибы и балансиры, зимняя мультипликаторная катушка и набор раттлинов.',
+          image: 'https://images.unsplash.com/photo-1516961642265-531546e84af2?auto=format&fit=crop&w=800&q=80',
+          fish: ['pike', 'perch', 'zander', 'carp'],
+          place: ['winter'],
+          reason: 'Морозостойкий карбоновый хлыст и катушка с курком сброса удобны для ловли со льда в перчатках.'
+        }
+      ];
+
+      function createFallbackSvg(label) {
+        const safeText = encodeURIComponent(label.slice(0, 26));
+        return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(
+          `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+            <rect width="400" height="300" fill="#E8DCC4"/>
+            <circle cx="200" cy="135" r="46" fill="#1B3A2F" opacity="0.14"/>
+            <path d="M160 155 C185 115, 225 115, 245 145 C225 160, 185 160, 160 155 Z" fill="#1B3A2F"/>
+            <circle cx="230" cy="138" r="3" fill="#E8763A"/>
+            <text x="200" y="215" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1B3A2F" text-anchor="middle">${decodeURIComponent(safeText)}</text>
+          </svg>`
+        )}`;
+      }
+
+      const formatPrice = (num) => new Intl.NumberFormat('ru-RU').format(num) + ' ₽';
+
+      let cart = [];
+      try {
+        const saved = localStorage.getItem('klevy_ulov_cart');
+        if (saved) cart = JSON.parse(saved);
+      } catch (e) {
+        cart = [];
+      }
+
+      function saveCart() {
+        try {
+          localStorage.setItem('klevy_ulov_cart', JSON.stringify(cart));
+        } catch (e) {}
+      }
+
+      const productsGrid = document.getElementById('productsGrid');
+      const filterBtns = document.querySelectorAll('.filter-btn');
+
+      function renderCatalog(category = 'all') {
+        const filtered = category === 'all'
+          ? PRODUCTS
+          : PRODUCTS.filter(item => item.category === category);
+
+        productsGrid.innerHTML = filtered.map(item => `
+          <article class="product-card">
+            <div class="product-media">
+              <span class="product-badge">${item.categoryLabel}</span>
+              <img
+                src="${item.image}"
+                alt="${item.name}"
+                loading="lazy"
+                onerror="this.onerror=null;this.src='${createFallbackSvg(item.categoryLabel)}';"
+              />
+            </div>
+            <div class="product-body">
+              <div>
+                <h3 class="product-title">${item.name}</h3>
+                <p class="product-desc">${item.desc}</p>
+              </div>
+              <div class="product-footer">
+                <span class="product-price">${formatPrice(item.price)}</span>
+                <button type="button" class="product-add-btn" data-add-id="${item.id}">
+                  + В корзину
+                </button>
+              </div>
+            </div>
+          </article>
+        `).join('');
+      }
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('is-active'));
+          btn.classList.add('is-active');
+          renderCatalog(btn.dataset.category);
+        });
+      });
+
+      let selectedFish = 'pike';
+      let selectedPlace = 'river';
+
+      const fishOptions = document.getElementById('fishOptions');
+      const placeOptions = document.getElementById('placeOptions');
+      const pickerResultsGrid = document.getElementById('pickerResultsGrid');
+      const pickerAdviceText = document.getElementById('pickerAdviceText');
+
+      const ADVICE_MAP = {
+        'pike-river': 'Акцент на запас мощности на течении и надёжный поводок против щучьих зубов',
+        'pike-lake': 'Оптимальный баланс для твичинга воблеров и проводки вдоль травы',
+        'pike-winter': 'Жёсткий удильник для уверенной подсечки щуки на балансиры и вибы со льда',
+        'perch-river': 'Чувствительная вершинка для контроля джиговой ступеньки на речной бровке',
+        'perch-lake': 'Деликатная подача лёгких приманок для ловли стайного окуня в стоячей воде',
+        'perch-winter': 'Сбалансированная зимняя снасть для работы балансирами и блесной на лунке',
+        'zander-river': 'Быстрый звонкий бланк, чтобы пробить жёсткую пасть судака на струе',
+        'zander-lake': 'Точный контроль дна и высокая сенсорика при ловле на русловых свалах',
+        'zander-winter': 'Мощный зимний комплект под тяжелые раттлины на глубинных бровках',
+        'carp-river': 'Дальнобойный речной фидер с запасом прочности для борьбы на течении',
+        'carp-lake': 'Катушка с байтраннером и вяжущий бланк для вываживания крупного карпа',
+        'carp-winter': 'Специализированный зимний комплект для подлёдной ловли на платных водоёмах'
+      };
+
+      function renderPickerRecommendations() {
+        const key = `${selectedFish}-${selectedPlace}`;
+        pickerAdviceText.textContent = ADVICE_MAP[key] || 'Подобрали оптимальные снасти из наличия';
+
+        let matches = PRODUCTS.filter(
+          p => p.fish.includes(selectedFish) && p.place.includes(selectedPlace)
+        );
+
+        if (matches.length < 2) {
+          const secondary = PRODUCTS.filter(
+            p => !matches.includes(p) && (p.place.includes(selectedPlace) || p.fish.includes(selectedFish))
+          );
+          matches = matches.concat(secondary);
+        }
+
+        const recommended = matches.slice(0, 3);
+
+        pickerResultsGrid.innerHTML = recommended.map(item => `
+          <article class="picker-card">
+            <div>
+              <div class="picker-card-top">
+                <img
+                  src="${item.image}"
+                  alt="${item.name}"
+                  class="picker-card-thumb"
+                  loading="lazy"
+                  onerror="this.onerror=null;this.src='${createFallbackSvg(item.categoryLabel)}';"
+                />
+                <div>
+                  <span class="picker-card-cat">${item.categoryLabel}</span>
+                  <h4 class="picker-card-name">${item.name}</h4>
+                </div>
+              </div>
+              <p class="picker-card-reason" style="margin-top: 10px;">${item.reason}</p>
+            </div>
+            <div class="picker-card-bottom">
+              <span class="product-price" style="font-size: 1.25rem;">${formatPrice(item.price)}</span>
+              <button type="button" class="product-add-btn" data-add-id="${item.id}">+ В корзину</button>
+            </div>
+          </article>
+        `).join('');
+      }
+
+      fishOptions.addEventListener('click', (e) => {
+        const btn = e.target.closest('.picker-chip');
+        if (!btn) return;
+        fishOptions.querySelectorAll('.picker-chip').forEach(c => c.classList.remove('is-selected'));
+        btn.classList.add('is-selected');
+        selectedFish = btn.dataset.fish;
+        renderPickerRecommendations();
+      });
+
+      placeOptions.addEventListener('click', (e) => {
+        const btn = e.target.closest('.picker-chip');
+        if (!btn) return;
+        placeOptions.querySelectorAll('.picker-chip').forEach(c => c.classList.remove('is-selected'));
+        btn.classList.add('is-selected');
+        selectedPlace = btn.dataset.place;
+        renderPickerRecommendations();
+      });
+
+      const headerCartCount = document.getElementById('headerCartCount');
+      const cartItemsContainer = document.getElementById('cartItemsContainer');
+      const cartTotalSum = document.getElementById('cartTotalSum');
+      const cartFooter = document.getElementById('cartFooter');
+      const toastEl = document.getElementById('toast');
+      let toastTimer = null;
+
+      function showToast(message) {
+        toastEl.textContent = message;
+        toastEl.classList.add('is-visible');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => {
+          toastEl.classList.remove('is-visible');
+        }, 2800);
+      }
+
+      function addToCart(productId) {
+        const product = PRODUCTS.find(p => p.id === productId);
+        if (!product) return;
+
+        const existing = cart.find(item => item.id === productId);
+        if (existing) {
+          existing.qty += 1;
+        } else {
+          cart.push({ id: product.id, qty: 1 });
+        }
+
+        saveCart();
+        updateCartUI();
+        showToast(`Добавлено в корзину: ${product.name}`);
+      }
+
+      function changeQty(productId, delta) {
+        const idx = cart.findIndex(item => item.id === productId);
+        if (idx === -1) return;
+
+        cart[idx].qty += delta;
+        if (cart[idx].qty <= 0) {
+          cart.splice(idx, 1);
+        }
+        saveCart();
+        updateCartUI();
+      }
+
+      function removeFromCart(productId) {
+        cart = cart.filter(item => item.id !== productId);
+        saveCart();
+        updateCartUI();
+      }
+
+      function updateCartUI() {
+        const totalCount = cart.reduce((acc, item) => acc + item.qty, 0);
+        headerCartCount.textContent = totalCount;
+
+        if (cart.length === 0) {
+          cartItemsContainer.innerHTML = `
+            <div class="cart-empty">
+              <strong>Корзина пока пуста</strong>
+              <p>Выберите удилище, катушку или готовый комплект в каталоге — мы проверим каждую позицию перед отправкой.</p>
+            </div>
+          `;
+          cartFooter.style.display = 'none';
+          return;
+        }
+
+        cartFooter.style.display = 'block';
+        let totalSum = 0;
+
+        cartItemsContainer.innerHTML = cart.map(entry => {
+          const product = PRODUCTS.find(p => p.id === entry.id);
+          if (!product) return '';
+          const subtotal = product.price * entry.qty;
+          totalSum += subtotal;
+
+          return `
+            <div class="cart-item">
+              <img
+                src="${product.image}"
+                alt="${product.name}"
+                class="cart-item-img"
+                onerror="this.onerror=null;this.src='${createFallbackSvg(product.categoryLabel)}';"
+              />
+              <div class="cart-item-info">
+                <div class="cart-item-title">${product.name}</div>
+                <div class="cart-item-price">${formatPrice(product.price)} × ${entry.qty} = ${formatPrice(subtotal)}</div>
+                <div class="cart-item-controls">
+                  <button type="button" class="qty-btn" data-qty-dec="${product.id}" aria-label="Уменьшить количество">−</button>
+                  <span class="qty-val">${entry.qty}</span>
+                  <button type="button" class="qty-btn" data-qty-inc="${product.id}" aria-label="Увеличить количество">+</button>
+                  <button type="button" class="remove-item-btn" data-remove-id="${product.id}">Удалить</button>
+                </div>
+              </div>
+            </div>
+          `;
+        }).join('');
+
+        cartTotalSum.textContent = formatPrice(totalSum);
+      }
+
+      document.addEventListener('click', (e) => {
+        const addBtn = e.target.closest('[data-add-id]');
+        if (addBtn) {
+          addToCart(addBtn.dataset.addId);
+          return;
+        }
+
+        const decBtn = e.target.closest('[data-qty-dec]');
+        if (decBtn) {
+          changeQty(decBtn.dataset.qtyDec, -1);
+          return;
+        }
+
+        const incBtn = e.target.closest('[data-qty-inc]');
+        if (incBtn) {
+          changeQty(incBtn.dataset.qtyInc, 1);
+          return;
+        }
+
+        const remBtn = e.target.closest('[data-remove-id]');
+        if (remBtn) {
+          removeFromCart(remBtn.dataset.removeId);
+        }
+      });
+
+      const cartBackdrop = document.getElementById('cartBackdrop');
+      const openCartBtn = document.getElementById('openCartBtn');
+      const closeCartBtn = document.getElementById('closeCartBtn');
+      const checkoutBtn = document.getElementById('checkoutBtn');
+
+      function openCart() {
+        cartBackdrop.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeCart() {
+        cartBackdrop.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+
+      openCartBtn.addEventListener('click', openCart);
+      closeCartBtn.addEventListener('click', closeCart);
+      cartBackdrop.addEventListener('click', (e) => {
+        if (e.target === cartBackdrop) closeCart();
+      });
+
+      checkoutBtn.addEventListener('click', () => {
+        if (cart.length === 0) return;
+        cart = [];
+        saveCart();
+        updateCartUI();
+        closeCart();
+        showToast('Заказ принят! Менеджер свяжется для подтверждения проверки снастей.');
+      });
+
+      const returnBackdrop = document.getElementById('returnBackdrop');
+      const openReturnModalBtn = document.getElementById('openReturnModalBtn');
+      const closeReturnBtn = document.getElementById('closeReturnBtn');
+      const returnForm = document.getElementById('returnForm');
+
+      function openReturnModal() {
+        returnBackdrop.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeReturnModal() {
+        returnBackdrop.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+
+      openReturnModalBtn.addEventListener('click', openReturnModal);
+      closeReturnBtn.addEventListener('click', closeReturnModal);
+      returnBackdrop.addEventListener('click', (e) => {
+        if (e.target === returnBackdrop) closeReturnModal();
+      });
+
+      returnForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        returnForm.reset();
+        closeReturnModal();
+        showToast('Заявка на возврат принята! Инструкция отправлена в мессенджер.');
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          if (cartBackdrop.classList.contains('is-open')) closeCart();
+          if (returnBackdrop.classList.contains('is-open')) closeReturnModal();
+        }
+      });
+
+      const burgerBtn = document.getElementById('burgerBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+
+      burgerBtn.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.toggle('is-open');
+        burgerBtn.setAttribute('aria-expanded', String(isOpen));
+      });
+
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('is-open');
+          burgerBtn.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      const reveals = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
+
+        reveals.forEach(el => observer.observe(el));
+      } else {
+        reveals.forEach(el => el.classList.add('is-visible'));
+      }
+
+      renderCatalog('all');
+      renderPickerRecommendations();
+      updateCartUI();
+    })();
+  </script>
+</body>
+</html>
